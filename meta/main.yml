@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  role_name: postgresql
+  author: Viktor Berke
+  description: Install and configure PostgreSQL
+  license: license (MIT)
+  min_ansible_version: '2.10'
+  platforms: []
+  galaxy_tags: []

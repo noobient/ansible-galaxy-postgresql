@@ -1,0 +1,8 @@
+---
+- include_role:
+    name: noobient.thirdparty
+  vars:
+    name: PostgreSQL
+    package: postgresql-17
+    gpg_url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    repo_file: pgdg
