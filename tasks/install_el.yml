@@ -1,4 +1,13 @@
 ---
+# https://noobient.com/2019/11/26/postgresql-on-centos-8-and-rhel-8/
+# Seems to have been fixed on EL9, but not on EL8
+- name: Disable PostgreSQL DNF module stream
+  command:
+    cmd: dnf -y module disable postgresql
+  register: noobient_postgresql_dnfmodule_disable
+  changed_when: ('Nothing to do.' not in noobient_postgresql_dnfmodule_disable.stdout)
+  when: ansible_distribution_major_version == '8'
+
 - include_role:
     name: noobient.thirdparty
   vars:
