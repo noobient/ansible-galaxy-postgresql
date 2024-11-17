@@ -5,4 +5,5 @@
     name: PostgreSQL
     package: postgresql-17
     gpg_url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    gpg_dest: /etc/apt/trusted.gpg.d/apt.postgresql.org.asc
     repo_file: pgdg
