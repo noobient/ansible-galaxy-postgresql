@@ -8,7 +8,7 @@ This role installs and configures PostgreSQL instances.
 
 | Name | Required | Example | Description |
 |---|---|---|---|
-| `msg` | yes | `Hello world!` | Message to be displayed. |
+| `version` | no | `16` | PostgreSQL version to be installed. Defaults to `17`. |
 
 ## Examples
 
@@ -16,7 +16,7 @@ This role installs and configures PostgreSQL instances.
 - include_role:
     name: noobient.postgresql
   vars:
-    msg: 'Hello world!'
+    version: 16
 ```
 
 ## Return Values

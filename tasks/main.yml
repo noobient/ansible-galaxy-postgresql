@@ -1,4 +1,6 @@
 ---
+- include_tasks: vars.yml
+
 - include_tasks: install_ubuntu.yml
   when: ansible_os_family == 'Debian'
 

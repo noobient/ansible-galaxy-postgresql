@@ -12,7 +12,8 @@
     name: noobient.thirdparty
   vars:
     name: PostgreSQL
-    package: postgresql17-server
+    package: "postgresql{{ eff_pg_version }}-server"
     gpg_file: PGDG-RPM-GPG-KEY
     gpg_dest: /etc/pki/rpm-gpg/PGDG-RPM-GPG-KEY
     repo_file: "pgdg-{% if ansible_distribution == 'Fedora' %}fedora{% else %}redhat{{ ansible_distribution_major_version }}{% endif %}"
+    version: ''

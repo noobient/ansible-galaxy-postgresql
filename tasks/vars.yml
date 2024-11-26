@@ -1,0 +1,8 @@
+---
+# Make sure we don't conflict with thirdparty's version. Gotta use set_fact,
+# otherwise eff_pg_version gets evaluated erroneously during thirdparty
+# include_role where we set version to the empty string, thus overriding version
+# to the default.
+- name: Set up variables
+  set_fact:
+    eff_pg_version: "{% if version is defined and version | int %}{{ version }}{% else %}{{ default_pg_version }}{% endif %}"

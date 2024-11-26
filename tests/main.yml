@@ -4,4 +4,4 @@
     - include_role:
         name: "{{ playbook_dir.split('/')[:-1] | last }}"
       vars:
-        msg: 'pikaboo'
+        version: 16
