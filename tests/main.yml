@@ -3,5 +3,8 @@
   tasks:
     - include_role:
         name: "{{ playbook_dir.split('/')[:-1] | last }}"
+
+    - include_role:
+        name: "{{ playbook_dir.split('/')[:-1] | last }}"
       vars:
         version: 16
