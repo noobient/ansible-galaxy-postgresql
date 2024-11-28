@@ -4,4 +4,4 @@
     cmd: "postgresql-{{ eff_pg_version }}-setup initdb"
   register: noobient_pg_initdb
   changed_when: noobient_pg_initdb_ok_str in noobient_pg_initdb.stdout
-  failed_when: noobient_pg_initdb.rc != 0 and noobient_pg_initdb_exists_str not in noobient_pg_initdb.stderr
+  failed_when: noobient_pg_initdb.rc != 0 and noobient_pg_initdb_exists_str not in noobient_pg_initdb.stdout
