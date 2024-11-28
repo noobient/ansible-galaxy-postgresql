@@ -1,7 +1,9 @@
 ---
+# TODO remove empty sections once 20.04 is EOL
 - name: Configure PostgreSQL include location
   ini_file:
     path: "/var/lib/pgsql/{{ eff_pg_version }}/data/postgresql.conf"
+    section: ''
     option: include_dir
     value: "'/etc/postgresql/{{ eff_pg_version }}/main/conf.d'"
     create: false
@@ -13,6 +15,7 @@
 - name: Configure PostgreSQL port
   ini_file:
     path: "/etc/postgresql/{{ eff_pg_version }}/main/conf.d/port.conf"
+    section: ''
     option: port
     value: "{{ eff_pg_port }}"
     create: true
