@@ -11,3 +11,4 @@
   when: ansible_os_family == 'RedHat'
 
 - include_tasks: systemd.yml
+- include_tasks: config.yml

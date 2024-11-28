@@ -8,3 +8,5 @@
         name: "{{ playbook_dir.split('/')[:-1] | last }}"
       vars:
         version: 16
+        enabled: true
+        port: 7777

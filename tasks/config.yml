@@ -1,0 +1,21 @@
+---
+- name: Configure PostgreSQL include location
+  ini_file:
+    path: "/var/lib/pgsql/{{ eff_pg_version }}/data/postgresql.conf"
+    option: include_dir
+    value: "'/etc/postgresql/{{ eff_pg_version }}/main/conf.d'"
+    create: false
+    mode: '0644'
+    owner: "{{ noobient_pg_user }}"
+    group: "{{ noobient_pg_group }}"
+  when: ansible_os_family == 'RedHat'
+
+- name: Configure PostgreSQL port
+  ini_file:
+    path: "/etc/postgresql/{{ eff_pg_version }}/main/conf.d/port.conf"
+    option: port
+    value: "{{ eff_pg_port }}"
+    create: true
+    mode: '0644'
+    owner: "{{ noobient_pg_user }}"
+    group: "{{ noobient_pg_group }}"

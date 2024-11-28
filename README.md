@@ -10,6 +10,7 @@ This role installs and configures PostgreSQL instances.
 |---|---|---|---|
 | `version` | no | `16` | PostgreSQL version to be installed. Defaults to `17`. |
 | `enabled` | no | `true` | Auto-start PostgreSQL upon boot or not. Defaults to `false`. |
+| `port` | no | `5555` | Set port to listen on. Defaults to `5432`. |
 
 ## Examples
 
@@ -19,6 +20,7 @@ This role installs and configures PostgreSQL instances.
   vars:
     version: 16
     enabled: true
+    port: 6789
 ```
 
 ## Return Values

@@ -1,6 +1,12 @@
 ---
 default_pg_version: 17
+default_pg_port: 5432
+
 noobient_pg_initdb_ok_str: 'Initializing database ... OK'
 noobient_pg_initdb_exists_str: 'Data directory is not empty!'
+noobient_pg_user: 'postgres'
+noobient_pg_group: "{{ noobient_pg_user }}"
+
 eff_pg_unit: "postgresql{% if ansible_os_family == 'RedHat' %}-{{ eff_pg_version }}{% endif %}.service"
 eff_pg_enabled: "{% if enabled is defined %}{{ enabled | bool }}{% else %}false{% endif %}"
+eff_pg_port: "{% if port is defined and port | string | length %}{{ port }}{% else %}{{ default_pg_port }}{% endif %}"
