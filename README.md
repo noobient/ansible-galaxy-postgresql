@@ -9,6 +9,7 @@ This role installs and configures PostgreSQL instances.
 | Name | Required | Example | Description |
 |---|---|---|---|
 | `version` | no | `16` | PostgreSQL version to be installed. Defaults to `17`. |
+| `enabled` | no | `true` | Auto-start PostgreSQL upon boot or not. Defaults to `false`. |
 
 ## Examples
 
@@ -17,6 +18,7 @@ This role installs and configures PostgreSQL instances.
     name: noobient.postgresql
   vars:
     version: 16
+    enabled: true
 ```
 
 ## Return Values

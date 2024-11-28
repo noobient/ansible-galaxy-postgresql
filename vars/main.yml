@@ -1,2 +1,6 @@
 ---
 default_pg_version: 17
+noobient_pg_initdb_ok_str: 'Initializing database ... OK'
+noobient_pg_initdb_exists_str: 'Data directory is not empty!'
+eff_pg_unit: "postgresql{% if ansible_os_family == 'RedHat' %}-{{ eff_pg_version }}{% endif %}.service"
+eff_pg_enabled: "{% if enabled is defined %}{{ enabled | bool }}{% else %}false{% endif %}"

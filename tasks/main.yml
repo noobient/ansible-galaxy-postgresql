@@ -6,3 +6,8 @@
 
 - include_tasks: install_el.yml
   when: ansible_os_family == 'RedHat'
+
+- include_tasks: init.yml
+  when: ansible_os_family == 'RedHat'
+
+- include_tasks: systemd.yml
