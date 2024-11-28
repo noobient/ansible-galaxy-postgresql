@@ -1,5 +1,5 @@
 ---
 - name: Configure PostgreSQL boot behavior
-  systemd_service:
+  systemd:
     name: "{{ eff_pg_unit }}"
     enabled: "{{ eff_pg_enabled }}"
