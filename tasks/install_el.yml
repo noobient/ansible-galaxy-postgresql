@@ -6,7 +6,7 @@
     cmd: dnf -y module disable postgresql
   register: noobient_postgresql_dnfmodule_disable
   changed_when: ('Nothing to do.' not in noobient_postgresql_dnfmodule_disable.stdout)
-  when: ansible_distribution_major_version == '8'
+  when: ansible_facts['distribution_major_version'] == '8'
 
 - include_role:
     name: noobient.thirdparty
@@ -14,6 +14,6 @@
     name: PostgreSQL
     package: "postgresql{{ eff_pg_version }}-server"
     gpg_file: PGDG-RPM-GPG-KEY
-    gpg_dest: /etc/pki/rpm-gpg/PGDG-RPM-GPG-KEY
-    repo_file: "pgdg-{% if ansible_distribution == 'Fedora' %}fedora{% else %}redhat{{ ansible_distribution_major_version }}{% endif %}"
+    gpg_dest: "/etc/pki/rpm-gpg/PGDG-RPM-GPG-KEY-{% if ansible_facts['distribution'] == 'Fedora' %}Fedora{% else %}RHEL{% endif %}"
+    repo_file: "pgdg-{% if ansible_facts['distribution'] == 'Fedora' %}fedora{% else %}redhat{{ ansible_facts['distribution_major_version'] }}{% endif %}"
     version: ''
